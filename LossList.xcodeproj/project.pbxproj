@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B10CB522874655B00E45D0C /* EquipmentLosses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B10CB512874655B00E45D0C /* EquipmentLosses.swift */; };
+		4B10CB542874658E00E45D0C /* PersonnelLosses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B10CB532874658E00E45D0C /* PersonnelLosses.swift */; };
+		4B10CB5628746A5E00E45D0C /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B10CB5528746A5E00E45D0C /* NetworkingManager.swift */; };
+		4B4227EA2879C7820087A8CE /* ParseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4227E92879C7820087A8CE /* ParseError.swift */; };
+		4B4227EC2879D1E10087A8CE /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4227EB2879D1E10087A8CE /* Networking.swift */; };
+		4B4227EE2879D2A60087A8CE /* LossesType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4227ED2879D2A60087A8CE /* LossesType.swift */; };
 		4BDF49252871F03600DAD15F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF49242871F03600DAD15F /* AppDelegate.swift */; };
 		4BDF49272871F03600DAD15F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF49262871F03600DAD15F /* SceneDelegate.swift */; };
 		4BDF49292871F03600DAD15F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF49282871F03600DAD15F /* MainViewController.swift */; };
@@ -16,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B10CB512874655B00E45D0C /* EquipmentLosses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentLosses.swift; sourceTree = "<group>"; };
+		4B10CB532874658E00E45D0C /* PersonnelLosses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnelLosses.swift; sourceTree = "<group>"; };
+		4B10CB5528746A5E00E45D0C /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		4B4227E92879C7820087A8CE /* ParseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseError.swift; sourceTree = "<group>"; };
+		4B4227EB2879D1E10087A8CE /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		4B4227ED2879D2A60087A8CE /* LossesType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesType.swift; sourceTree = "<group>"; };
 		4BDF49212871F03600DAD15F /* LossList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LossList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BDF49242871F03600DAD15F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BDF49262871F03600DAD15F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +77,10 @@
 		4B10CB4B28745D7F00E45D0C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4B10CB512874655B00E45D0C /* EquipmentLosses.swift */,
+				4B10CB532874658E00E45D0C /* PersonnelLosses.swift */,
+				4B4227E92879C7820087A8CE /* ParseError.swift */,
+				4B4227ED2879D2A60087A8CE /* LossesType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -95,6 +111,15 @@
 			path = "Views & View Controllers";
 			sourceTree = "<group>";
 		};
+		4B10CB502874650900E45D0C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4B4227EB2879D1E10087A8CE /* Networking.swift */,
+				4B10CB5528746A5E00E45D0C /* NetworkingManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		4BDF49182871F03500DAD15F = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +143,7 @@
 				4B10CB4B28745D7F00E45D0C /* Model */,
 				4B10CB4E28745F7B00E45D0C /* Views & View Controllers */,
 				4B10CB4A28745D6E00E45D0C /* Presenter */,
+				4B10CB502874650900E45D0C /* Networking */,
 				4B10CB4C28745DB500E45D0C /* Sources */,
 			);
 			path = LossList;
@@ -194,6 +220,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BDF49292871F03600DAD15F /* MainViewController.swift in Sources */,
+				4B4227EA2879C7820087A8CE /* ParseError.swift in Sources */,
+				4B10CB542874658E00E45D0C /* PersonnelLosses.swift in Sources */,
+				4B4227EC2879D1E10087A8CE /* Networking.swift in Sources */,
+				4B10CB522874655B00E45D0C /* EquipmentLosses.swift in Sources */,
+				4B10CB5628746A5E00E45D0C /* NetworkingManager.swift in Sources */,
+				4B4227EE2879D2A60087A8CE /* LossesType.swift in Sources */,
 				4BDF49252871F03600DAD15F /* AppDelegate.swift in Sources */,
 				4BDF49272871F03600DAD15F /* SceneDelegate.swift in Sources */,
 			);
