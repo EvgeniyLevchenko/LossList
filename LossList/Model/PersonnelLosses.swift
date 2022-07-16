@@ -15,9 +15,9 @@ struct PersonnelLosses: Codable {
     let pow: Int
     
     enum CodingKeys: String, CodingKey{
-        case date
-        case day
-        case personnel
+        case date = "date"
+        case day = "day"
+        case personnel = "personnel"
         case note = "personnel*"
         case pow = "POW"
     }

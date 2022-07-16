@@ -26,18 +26,18 @@ struct EquipmentLosses: Codable {
     let vehiclesAndFuelTanks: Int
     let cruiseMissiles: Int
     
-    enum CodingKeys: String, CodingKey {
-        case date
-        case day
-        case aircraft
-        case helicopter
-        case tank
+    enum CodingKeys: String, CodingKey, CaseIterable {
+        case date = "date"
+        case day = "day"
+        case aircraft = "aircraft"
+        case helicopter = "helicopter"
+        case tank = "tank"
         case apc = "APC"
         case fieldArtillery = "field artillery"
         case mrl = "MRL"
         case militaryAuto = "military auto"
         case fuelTank = "fuel tank"
-        case drone
+        case drone = "drone"
         case navalShip = "naval ship"
         case antiAircraftWarfare = "anti-aircraft warfare"
         case specialEquipment = "special equipment"

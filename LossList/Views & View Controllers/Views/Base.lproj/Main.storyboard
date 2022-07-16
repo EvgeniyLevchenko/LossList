@@ -13,34 +13,40 @@
         <!--Russian losses-->
         <scene sceneID="qtS-8i-xWt">
             <objects>
-                <viewController id="OF8-6F-R19" customClass="MainViewController" customModule="LossList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="OF8-6F-R19" customClass="MainViewController" customModule="LossList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HjY-yc-Tce">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4nj-zV-Tvt">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBrownColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PtN-tc-4Nf">
+                                <color key="backgroundColor" red="0.40388320973425196" green="0.34344697828788245" blue="0.25888253732595234" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="774" id="Wij-UK-Dg9"/>
+                                    <constraint firstAttribute="width" constant="414" id="fDe-MO-Dlb"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="PtN-tc-4Nf">
                                     <size key="itemSize" width="128" height="128"/>
+                                    <size key="estimatedItemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="9.5" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="QQF-Ui-ugX">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LossesCollectionViewCell" id="QQF-Ui-ugX" customClass="LossesCollectionViewCell" customModule="LossList" customModuleProvider="target">
+                                        <rect key="frame" x="9.5" y="10" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TYA-Ie-kcr">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="128" height="128"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Sra-ZA-usk"/>
-                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <color key="backgroundColor" red="0.61647790670000002" green="0.52422945330000004" blue="0.39515226390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Sra-ZA-usk" firstAttribute="trailing" secondItem="4nj-zV-Tvt" secondAttribute="trailing" id="0pd-dG-Y2i"/>
                             <constraint firstItem="4nj-zV-Tvt" firstAttribute="top" secondItem="Sra-ZA-usk" secondAttribute="top" id="M4X-r7-Ok0"/>
@@ -48,11 +54,36 @@
                             <constraint firstItem="4nj-zV-Tvt" firstAttribute="leading" secondItem="Sra-ZA-usk" secondAttribute="leading" id="qTb-cg-bzY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Russian losses" largeTitleDisplayMode="never" id="eHl-dJ-14h"/>
+                    <navigationItem key="navigationItem" title="Russian losses" largeTitleDisplayMode="never" id="eHl-dJ-14h">
+                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="4ls-eO-Ucx">
+                            <color key="tintColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="descriptionButtonTapped:" destination="OF8-6F-R19" id="biF-26-nd5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="lossesCollectionView" destination="4nj-zV-Tvt" id="TiU-3F-ubW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcH-uP-vAi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1142.0289855072465" y="-358.25892857142856"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="TwI-CS-5LT">
+            <objects>
+                <viewController storyboardIdentifier="DetailsViewController" id="x73-QN-PZS" customClass="DetailsViewController" customModule="LossList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OSZ-u7-Eno">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gAE-4c-2Dl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oE6-Z0-MiY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2035" y="-358"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kvu-re-bvr">
@@ -76,6 +107,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBrownColor">
             <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
