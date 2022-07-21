@@ -25,6 +25,7 @@ struct EquipmentLosses: Codable {
     let mobileSRBMsystem: Int
     let vehiclesAndFuelTanks: Int
     let cruiseMissiles: Int
+    let greatestLossesDirection: String
     
     enum CodingKeys: String, CodingKey, CaseIterable {
         case date = "date"
@@ -44,6 +45,7 @@ struct EquipmentLosses: Codable {
         case mobileSRBMsystem = "mobile SRBM system"
         case vehiclesAndFuelTanks = "vehicles and fuel tanks"
         case cruiseMissiles = "cruise missiles"
+        case greatestLossesDirection = "greatest losses direction"
     }
     
     init(from decoder: Decoder) throws {
@@ -56,11 +58,21 @@ struct EquipmentLosses: Codable {
         apc = try container.decode(Int.self, forKey: .apc)
         fieldArtillery = try container.decode(Int.self, forKey: .fieldArtillery)
         mrl = try container.decode(Int.self, forKey: .mrl)
-        militaryAuto = try container.decode(Int.self, forKey: .militaryAuto)
-        fuelTank = try container.decode(Int.self, forKey: .fuelTank)
         drone = try container.decode(Int.self, forKey: .drone)
         navalShip = try container.decode(Int.self, forKey: .navalShip)
         antiAircraftWarfare = try container.decode(Int.self, forKey: .antiAircraftWarfare)
+        
+        do {
+            militaryAuto = try container.decode(Int.self, forKey: .militaryAuto)
+        } catch {
+            militaryAuto = 0
+        }
+        
+        do {
+            fuelTank = try container.decode(Int.self, forKey: .fuelTank)
+        } catch {
+            fuelTank = 0
+        }
         
         do {
             specialEquipment = try container.decode(Int.self, forKey: .specialEquipment)
@@ -86,6 +98,12 @@ struct EquipmentLosses: Codable {
             cruiseMissiles = try container.decode(Int.self, forKey: .cruiseMissiles)
         } catch {
             cruiseMissiles = 0
+        }
+        
+        do {
+            greatestLossesDirection = try container.decode(String.self, forKey: .greatestLossesDirection)
+        } catch {
+            greatestLossesDirection = ""
         }
         
         do {
