@@ -7,12 +7,7 @@
 
 import Foundation
 
-protocol Networking {
-    func fetchEquipmentLosses(completion: @escaping(Result<[EquipmentLosses], ParseError>) -> Void) -> Void
-    func fetchPersonnelLosses(completion: @escaping(Result<[PersonnelLosses], ParseError>) -> Void) -> Void
-}
-
-class NetworkManager: Networking {
+final class NetworkManager: Networking {
 
     private func getResourceURL(for lossesType: RequestType) -> URL {
         var resourceString: String

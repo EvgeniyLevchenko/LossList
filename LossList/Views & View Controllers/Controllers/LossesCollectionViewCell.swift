@@ -7,11 +7,7 @@
 
 import UIKit
 
-protocol Configurable {
-    func configure(lossesTypeImage: UIImage, lossesType: String, lossesNumber: Int)
-}
-
-class LossesCollectionViewCell: UICollectionViewCell {
+final class LossesCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var lossesTypeImageView: UIImageView!
     @IBOutlet private weak var lossesTypeLabel: UILabel!
@@ -29,7 +25,6 @@ class LossesCollectionViewCell: UICollectionViewCell {
 }
 
 extension LossesCollectionViewCell: Configurable {
-    
     func configure(lossesTypeImage: UIImage, lossesType: String, lossesNumber: Int) {
         lossesTypeImageView.image = lossesTypeImage
         lossesTypeLabel.text = lossesType
