@@ -21,4 +21,19 @@ struct PersonnelLosses: Codable {
         case note = "personnel*"
         case pow = "POW"
     }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        date = try container.decode(Date.self, forKey: .date)
+        day = try container.decode(Int.self, forKey: .day)
+        personnel = try container.decode(Int.self, forKey: .personnel)
+        note = try container.decode(String.self, forKey: .note)
+        
+        do {
+            pow = try container.decode(Int.self, forKey: .pow)
+        } catch {
+            pow = 0
+        }
+    }
 }
