@@ -7,16 +7,15 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
     
     @IBOutlet private weak var lossesCollectionView: UICollectionView!
     
-    private var losses = Losses()
     private let presenter = LossesPresenter()
     private let refreshControl = UIRefreshControl()
     
     @IBAction func descriptionButtonTapped(_ sender: Any) {
-        presenter.presentInfo(for: losses)
+        presenter.presentInfo()
     }
     
     override func viewDidLoad() {
@@ -34,18 +33,34 @@ extension MainViewController: LossesPresenterDelegate {
         presenter.getLossesInfo()
     }
     
-    func presentEquipmentLosses(equipment: [EquipmentLosses]) {
-        losses.equipment = equipment
+    func presentEquipmentLosses() {
         DispatchQueue.main.async {
             self.lossesCollectionView.reloadData()
         }
     }
     
-    func presentPersonnelLosses(personnel: [PersonnelLosses]) {
-        losses.personnel = personnel
+    func presentPersonnelLosses() {
         DispatchQueue.main.async {
             self.lossesCollectionView.reloadData()
         }
+    }
+    
+    func presentErrorInfo(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Dismiss", style: .cancel)
+        alert.addAction(alertAction)
+        self.present(alert, animated: true)
+    }
+    
+    func presentInfo(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Dismiss", style: .cancel)
+        alert.addAction(alertAction)
+        present(alert, animated: true)
+    }
+    
+    func presentViewController(controller: UIViewController) {
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
@@ -58,12 +73,12 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LossesCollectionViewCell.identifier, for: indexPath) as! LossesCollectionViewCell
-        presenter.configure(cell: cell, with: losses, atRow: indexPath.row)
+        presenter.configure(cell: cell, atRow: indexPath.row)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter.presentDetailsVC(with: losses, forCellAtIndex: indexPath.row)
+        presenter.presentDetailsVC(forCellAtIndex: indexPath.row)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -88,7 +103,8 @@ extension MainViewController {
     }
     
     private func setupRefreshControl() {
-        refreshControl.attributedTitle = NSAttributedString(string: "Updating data")
+        let title = "Updating data"
+        refreshControl.attributedTitle = NSAttributedString(string: title)
         refreshControl.addTarget(self, action: #selector(refreshCollectionView), for: .valueChanged)
         lossesCollectionView.refreshControl = refreshControl
     }

@@ -14,6 +14,15 @@
 		4B4227EE2879D2A60087A8CE /* LossesType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4227ED2879D2A60087A8CE /* LossesType.swift */; };
 		4B5D4F91287B03A200E4147C /* LossesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4F8F287B03A200E4147C /* LossesCollectionViewCell.swift */; };
 		4B5D4F92287B03A200E4147C /* LossesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B5D4F90287B03A200E4147C /* LossesCollectionViewCell.xib */; };
+		4B5EFED228859E080026D5DC /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5EFED028859E080026D5DC /* DateTableViewCell.swift */; };
+		4B5EFED328859E080026D5DC /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B5EFED128859E080026D5DC /* DateTableViewCell.xib */; };
+		4B5EFED628859E400026D5DC /* LossesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5EFED428859E400026D5DC /* LossesTableViewCell.swift */; };
+		4B5EFED728859E400026D5DC /* LossesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B5EFED528859E400026D5DC /* LossesTableViewCell.xib */; };
+		4B873FAA2886CFE200F52CBD /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B873FA92886CFE200F52CBD /* Configurable.swift */; };
+		4B873FAC2886D01C00F52CBD /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B873FAB2886D01C00F52CBD /* Networking.swift */; };
+		4B873FAE2886D05B00F52CBD /* LossesPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B873FAD2886D05B00F52CBD /* LossesPresenterDelegate.swift */; };
+		4B873FB02886D08900F52CBD /* LossesDetailsPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B873FAF2886D08900F52CBD /* LossesDetailsPresenterDelegate.swift */; };
+		4B873FB22886D5E800F52CBD /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B873FB12886D5E800F52CBD /* Segment.swift */; };
 		4B8B47CE287EF1E4003BA1B6 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B47CD287EF1E4003BA1B6 /* RequestType.swift */; };
 		4BADD3402881AB990045854F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BADD33F2881AB990045854F /* DetailsViewController.swift */; };
 		4BADD3422881AED50045854F /* LossesDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BADD3412881AED50045854F /* LossesDetailsPresenter.swift */; };
@@ -35,6 +44,15 @@
 		4B4227ED2879D2A60087A8CE /* LossesType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesType.swift; sourceTree = "<group>"; };
 		4B5D4F8F287B03A200E4147C /* LossesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesCollectionViewCell.swift; sourceTree = "<group>"; };
 		4B5D4F90287B03A200E4147C /* LossesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LossesCollectionViewCell.xib; sourceTree = "<group>"; };
+		4B5EFED028859E080026D5DC /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
+		4B5EFED128859E080026D5DC /* DateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateTableViewCell.xib; sourceTree = "<group>"; };
+		4B5EFED428859E400026D5DC /* LossesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesTableViewCell.swift; sourceTree = "<group>"; };
+		4B5EFED528859E400026D5DC /* LossesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LossesTableViewCell.xib; sourceTree = "<group>"; };
+		4B873FA92886CFE200F52CBD /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
+		4B873FAB2886D01C00F52CBD /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		4B873FAD2886D05B00F52CBD /* LossesPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesPresenterDelegate.swift; sourceTree = "<group>"; };
+		4B873FAF2886D08900F52CBD /* LossesDetailsPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesDetailsPresenterDelegate.swift; sourceTree = "<group>"; };
+		4B873FB12886D5E800F52CBD /* Segment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
 		4B8B47CD287EF1E4003BA1B6 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		4BADD33F2881AB990045854F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		4BADD3412881AED50045854F /* LossesDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesDetailsPresenter.swift; sourceTree = "<group>"; };
@@ -76,6 +94,8 @@
 				4BDF492A2871F03600DAD15F /* Main.storyboard */,
 				4BDF492F2871F03700DAD15F /* LaunchScreen.storyboard */,
 				4B5D4F90287B03A200E4147C /* LossesCollectionViewCell.xib */,
+				4B5EFED128859E080026D5DC /* DateTableViewCell.xib */,
+				4B5EFED528859E400026D5DC /* LossesTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -98,6 +118,7 @@
 				4B10CB532874658E00E45D0C /* PersonnelLosses.swift */,
 				4B4227E92879C7820087A8CE /* ParseError.swift */,
 				4B8B47CD287EF1E4003BA1B6 /* RequestType.swift */,
+				4B873FB12886D5E800F52CBD /* Segment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -117,6 +138,8 @@
 				4BDF49282871F03600DAD15F /* MainViewController.swift */,
 				4BADD33F2881AB990045854F /* DetailsViewController.swift */,
 				4B5D4F8F287B03A200E4147C /* LossesCollectionViewCell.swift */,
+				4B5EFED028859E080026D5DC /* DateTableViewCell.swift */,
+				4B5EFED428859E400026D5DC /* LossesTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -136,6 +159,17 @@
 				4B10CB5528746A5E00E45D0C /* NetworkManager.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		4B873FA82886CEED00F52CBD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4B873FA92886CFE200F52CBD /* Configurable.swift */,
+				4B873FAB2886D01C00F52CBD /* Networking.swift */,
+				4B873FAD2886D05B00F52CBD /* LossesPresenterDelegate.swift */,
+				4B873FAF2886D08900F52CBD /* LossesDetailsPresenterDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		4BDF49182871F03500DAD15F = {
@@ -161,6 +195,7 @@
 				4B10CB4B28745D7F00E45D0C /* Model */,
 				4B10CB4E28745F7B00E45D0C /* Views & View Controllers */,
 				4B10CB4A28745D6E00E45D0C /* Presenters */,
+				4B873FA82886CEED00F52CBD /* Protocols */,
 				4B10CB502874650900E45D0C /* Networking */,
 				4B10CB4C28745DB500E45D0C /* Sources */,
 			);
@@ -224,6 +259,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B5EFED728859E400026D5DC /* LossesTableViewCell.xib in Resources */,
+				4B5EFED328859E080026D5DC /* DateTableViewCell.xib in Resources */,
 				4BDF49312871F03700DAD15F /* LaunchScreen.storyboard in Resources */,
 				4B5D4F92287B03A200E4147C /* LossesCollectionViewCell.xib in Resources */,
 				4BDF492E2871F03700DAD15F /* Assets.xcassets in Resources */,
@@ -238,10 +275,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B5EFED628859E400026D5DC /* LossesTableViewCell.swift in Sources */,
+				4B5EFED228859E080026D5DC /* DateTableViewCell.swift in Sources */,
+				4B873FAA2886CFE200F52CBD /* Configurable.swift in Sources */,
+				4B873FAC2886D01C00F52CBD /* Networking.swift in Sources */,
 				4BC2F30F287C6B410080555D /* Losses.swift in Sources */,
+				4B873FB02886D08900F52CBD /* LossesDetailsPresenterDelegate.swift in Sources */,
 				4BDF49292871F03600DAD15F /* MainViewController.swift in Sources */,
 				4B8B47CE287EF1E4003BA1B6 /* RequestType.swift in Sources */,
 				4BC2F30D287C69270080555D /* LossesPresenter.swift in Sources */,
+				4B873FAE2886D05B00F52CBD /* LossesPresenterDelegate.swift in Sources */,
+				4B873FB22886D5E800F52CBD /* Segment.swift in Sources */,
 				4B4227EA2879C7820087A8CE /* ParseError.swift in Sources */,
 				4B10CB542874658E00E45D0C /* PersonnelLosses.swift in Sources */,
 				4B10CB522874655B00E45D0C /* EquipmentLosses.swift in Sources */,

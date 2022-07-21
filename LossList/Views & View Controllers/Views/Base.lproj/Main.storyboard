@@ -55,8 +55,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Russian losses" largeTitleDisplayMode="never" id="eHl-dJ-14h">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="GTH-9a-e4G">
+                            <color key="tintColor" red="0.0050000000000000001" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="4ls-eO-Ucx">
-                            <color key="tintColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.0050000000000000001" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="descriptionButtonTapped:" destination="OF8-6F-R19" id="biF-26-nd5"/>
                             </connections>
@@ -77,13 +80,67 @@
                     <view key="view" contentMode="scaleToFill" id="OSZ-u7-Eno">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Field artillery" translatesAutoresizingMaskIntoConstraints="NO" id="yVc-V2-7Ke">
+                                <rect key="frame" x="107" y="54" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Iwz-c4-DWw"/>
+                                    <constraint firstAttribute="width" constant="200" id="UgI-dn-k7U"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General losses: 1358" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50j-yt-BpV">
+                                <rect key="frame" x="113" y="269" width="188" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GVf-Y0-ja2">
+                                <rect key="frame" x="82" y="308" width="250" height="32"/>
+                                <color key="backgroundColor" red="0.40388320970000002" green="0.34344697829999998" blue="0.25888253729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="x6G-BB-G7M"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Monthly"/>
+                                    <segment title="Daily"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="0.84481597490000004" green="0.71839949469999997" blue="0.54151323419999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="segmentedControlValueChanged:" destination="x73-QN-PZS" eventType="valueChanged" id="zN6-Ff-Csf"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="B45-kU-kin">
+                                <rect key="frame" x="0.0" y="354" width="414" height="508"/>
+                                <color key="backgroundColor" red="0.60420675769999999" green="0.51904983459999998" blue="0.39211225160000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="Mea-BC-2qg"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="gAE-4c-2Dl"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.61647790670000002" green="0.52422945330000004" blue="0.39515226390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="50j-yt-BpV" firstAttribute="top" secondItem="yVc-V2-7Ke" secondAttribute="bottom" constant="15" id="0Li-ab-5gc"/>
+                            <constraint firstItem="GVf-Y0-ja2" firstAttribute="centerX" secondItem="OSZ-u7-Eno" secondAttribute="centerX" id="46H-PG-wEf"/>
+                            <constraint firstItem="B45-kU-kin" firstAttribute="centerX" secondItem="OSZ-u7-Eno" secondAttribute="centerX" id="Ceh-yD-Rir"/>
+                            <constraint firstItem="yVc-V2-7Ke" firstAttribute="top" secondItem="gAE-4c-2Dl" secondAttribute="top" constant="10" id="FxZ-pT-gW3"/>
+                            <constraint firstItem="B45-kU-kin" firstAttribute="top" secondItem="GVf-Y0-ja2" secondAttribute="bottom" constant="15" id="Lpy-yr-Gp4"/>
+                            <constraint firstItem="GVf-Y0-ja2" firstAttribute="top" secondItem="50j-yt-BpV" secondAttribute="bottom" constant="15" id="NMc-au-Tb5"/>
+                            <constraint firstItem="50j-yt-BpV" firstAttribute="centerX" secondItem="OSZ-u7-Eno" secondAttribute="centerX" id="Zz2-QH-shZ"/>
+                            <constraint firstItem="B45-kU-kin" firstAttribute="bottom" secondItem="gAE-4c-2Dl" secondAttribute="bottom" id="axO-FO-Cb1"/>
+                            <constraint firstItem="yVc-V2-7Ke" firstAttribute="centerX" secondItem="OSZ-u7-Eno" secondAttribute="centerX" id="cKT-HB-ZAm"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lossesNumber" destination="50j-yt-BpV" id="uSO-ZI-ZRc"/>
+                        <outlet property="lossesTableView" destination="B45-kU-kin" id="c8V-QA-Uhb"/>
+                        <outlet property="lossesTypeImageView" destination="yVc-V2-7Ke" id="n1e-3Q-DPT"/>
+                        <outlet property="segmentedControl" destination="GVf-Y0-ja2" id="qCR-pL-xLT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oE6-Z0-MiY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2035" y="-358"/>
+            <point key="canvasLocation" x="2057.971014492754" y="-358.25892857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kvu-re-bvr">
@@ -107,10 +164,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Field artillery" width="2264" height="1230"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBrownColor">
             <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
