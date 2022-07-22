@@ -67,17 +67,16 @@ final class LossesPresenter {
     public func presentInfo() {
         if dataIsAvailable == true {
             let title = "Description"
-            let date = losses.equipment.last?.date
+            guard let date = losses.equipment.last?.date else { return }
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMM d, yyyy"
-            let dateStr = dateFormatter.string(from: date!)
+            let dateStr = dateFormatter.string(from: date)
             let message = "Losses of Russians troops on the territory of Ukraine. Data was last updated on \(dateStr)"
             delegate?.presentInfo(title: title, message: message)
         } else {
             let title = "Description"
             let message = "Losses of Russians troops on the territory of Ukraine. Data is not available right now."
             delegate?.presentInfo(title: title, message: message)
-            
         }
     }
     
@@ -88,7 +87,11 @@ final class LossesPresenter {
            let lossesNumber = losses.getLosses(forLossesType: lossesType) {
             cell.configure(lossesTypeImage: lossesTypeImage, lossesType: lossesTypeStr, lossesNumber: lossesNumber)
         } else {
-            cell.configure(lossesTypeImage: UIImage(named: lossesTypeStr)!, lossesType: lossesTypeStr, lossesNumber: 0)
+            if let lossesTypeImage = UIImage(named: lossesTypeStr) {
+                cell.configure(lossesTypeImage: lossesTypeImage, lossesType: lossesTypeStr, lossesNumber: 0)
+            } else {
+                cell.configure(lossesTypeImage: UIImage(), lossesType: lossesTypeStr, lossesNumber: 0)
+            }
         }
     }
     

@@ -10,7 +10,7 @@ import Foundation
 struct Losses {
     var personnel: [PersonnelLosses] = []
     var equipment: [EquipmentLosses] = []
-        
+    
     public var daysNumber: Int {
         get {
             equipment.count
@@ -19,13 +19,13 @@ struct Losses {
     
     public var monthsNumber: Int {
         get {
-            let firstDate = equipment.first?.date
-            let lastDate = equipment.last?.date
+            guard let firstDate = equipment.first?.date else { return 0 }
+            guard let lastDate = equipment.last?.date else { return 0}
             let calendar = Calendar.current
-            var components = calendar.dateComponents([.month], from: firstDate!)
-            let firstMonth = components.month!
-            components = calendar.dateComponents([.month], from: lastDate!)
-            let lastMonth = components.month!
+            var components = calendar.dateComponents([.month], from: firstDate)
+            guard let firstMonth = components.month else { return 0 }
+            components = calendar.dateComponents([.month], from: lastDate)
+            guard let lastMonth = components.month else { return 0 }
             let monthsNumber = lastMonth - firstMonth + 1
             return monthsNumber
         }
@@ -103,7 +103,8 @@ struct Losses {
         let calendar = Calendar.current
         let firstDate = equipment[0].date
         var components = calendar.dateComponents([.year, .month], from: firstDate)
-        components.month! += 1 + monthsNumber
+        guard let monthValue = components.month else { return 0 }
+        components.setValue(monthValue + monthsNumber + 1, for: .month)
         components.day = 1
         guard let endOfMonth = calendar.date(from: components) else { return 0 }
         var endOfMonthIndex: Int

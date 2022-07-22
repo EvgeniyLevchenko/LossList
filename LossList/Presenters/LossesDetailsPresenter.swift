@@ -22,9 +22,10 @@ final class LossesDetailsPresenter {
     }
     
     public func getLossesInfo() {
-        let lossesTypeStr = LossesType.getLossesTypeName(for: lossesType!)
+        guard let lossesType = lossesType else { return }
+        let lossesTypeStr = LossesType.getLossesTypeName(for: lossesType)
         if let lossesTypeImage = UIImage(named: lossesTypeStr),
-           let lossesNumber = losses.getLosses(forLossesType: lossesType!) {
+           let lossesNumber = losses.getLosses(forLossesType: lossesType) {
             delegate?.presentLosses(lossesTypeImage: lossesTypeImage, lossesType: lossesTypeStr, lossesNumber: lossesNumber)
         }
     }
