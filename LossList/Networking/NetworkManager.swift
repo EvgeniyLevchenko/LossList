@@ -9,46 +9,23 @@ import Foundation
 
 final class NetworkManager: Networking {
 
-    private func getResourceURL(for lossesType: RequestType) -> URL {
-        var resourceString: String
+    private func getResourceURL<T>(for lossesType: T.Type) -> URL {
         switch lossesType {
-        case .equipment:
-            resourceString = "https://raw.githubusercontent.com/MacPaw/2022-Ukraine-Russia-War-Dataset/main/data/russia_losses_equipment.json"
-        case .personnel:
-            resourceString = "https://raw.githubusercontent.com/MacPaw/2022-Ukraine-Russia-War-Dataset/main/data/russia_losses_personnel.json"
+        case is PersonnelLosses.Type:
+            let resourceString = "https://raw.githubusercontent.com/MacPaw/2022-Ukraine-Russia-War-Dataset/main/data/russia_losses_personnel.json"
+            guard let resourceURL = URL(string: resourceString) else { fatalError() }
+            return resourceURL
+        case is EquipmentLosses.Type:
+            let resourceString = "https://raw.githubusercontent.com/MacPaw/2022-Ukraine-Russia-War-Dataset/main/data/russia_losses_equipment.json"
+            guard let resourceURL = URL(string: resourceString) else { fatalError() }
+            return resourceURL
+        default:
+            return URL(fileURLWithPath: "")
         }
-        guard let resourceURL = URL(string: resourceString) else { fatalError() }
-        return resourceURL
     }
     
-    public func fetchEquipmentLosses(completion: @escaping(Result<[EquipmentLosses], ParseError>) -> Void) {
-        let resourceURL = getResourceURL(for: .equipment)
-        let dataTask = URLSession.shared.dataTask(with: resourceURL) { data, _, _ in
-            guard let jsonData = data else {
-                completion(.failure(.noDataAvailable))
-                return
-            }
-            
-            do {
-                let strData = String(decoding: jsonData, as: UTF8.self)
-                let correctedStrData = strData.replacingOccurrences(of: "NaN", with: "0")
-                if let correctedJsonData = correctedStrData.data(using: .utf8) {
-                    let decoder = JSONDecoder()
-                    let formatter = DateFormatter()
-                    formatter.dateFormat = "yyyy-MM-dd"
-                    decoder.dateDecodingStrategy = .formatted(formatter)
-                    let equipmentLosses = try decoder.decode([EquipmentLosses].self, from: correctedJsonData)
-                    completion(.success(equipmentLosses))
-                }
-            } catch {
-                completion(.failure(.canNotProcessData))
-            }
-        }
-        dataTask.resume()
-    }
-    
-    public func fetchPersonnelLosses(completion: @escaping(Result<[PersonnelLosses], ParseError>) -> Void) {
-        let resourceURL = getResourceURL(for: .personnel)
+    public func fetchLosses<T: Decodable>(for lossesType: T.Type, completion: @escaping(Result<[T], ParseError>) -> Void) {
+        let resourceURL = getResourceURL(for: lossesType)
         let dataTask = URLSession.shared.dataTask(with: resourceURL) { data, _, _ in
             guard let jsonData = data else {
                 completion(.failure(.noDataAvailable))
@@ -60,8 +37,8 @@ final class NetworkManager: Networking {
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd"
                 decoder.dateDecodingStrategy = .formatted(formatter)
-                let personnelLosses = try decoder.decode([PersonnelLosses].self, from: jsonData)
-                completion(.success(personnelLosses))
+                let losses = try decoder.decode([T].self, from: jsonData)
+                completion(.success(losses))
             } catch {
                 completion(.failure(.canNotProcessData))
             }

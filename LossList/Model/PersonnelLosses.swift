@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PersonnelLosses: Codable {
+struct PersonnelLosses: Decodable {
     let date: Date
     let day: Int
     let personnel: Int

@@ -23,7 +23,6 @@
 		4B873FAE2886D05B00F52CBD /* LossesPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B873FAD2886D05B00F52CBD /* LossesPresenterDelegate.swift */; };
 		4B873FB02886D08900F52CBD /* LossesDetailsPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B873FAF2886D08900F52CBD /* LossesDetailsPresenterDelegate.swift */; };
 		4B873FB22886D5E800F52CBD /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B873FB12886D5E800F52CBD /* Segment.swift */; };
-		4B8B47CE287EF1E4003BA1B6 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B47CD287EF1E4003BA1B6 /* RequestType.swift */; };
 		4BADD3402881AB990045854F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BADD33F2881AB990045854F /* DetailsViewController.swift */; };
 		4BADD3422881AED50045854F /* LossesDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BADD3412881AED50045854F /* LossesDetailsPresenter.swift */; };
 		4BC05A212889E212004967E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC05A202889E212004967E3 /* Assets.xcassets */; };
@@ -53,7 +52,6 @@
 		4B873FAD2886D05B00F52CBD /* LossesPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesPresenterDelegate.swift; sourceTree = "<group>"; };
 		4B873FAF2886D08900F52CBD /* LossesDetailsPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesDetailsPresenterDelegate.swift; sourceTree = "<group>"; };
 		4B873FB12886D5E800F52CBD /* Segment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
-		4B8B47CD287EF1E4003BA1B6 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		4BADD33F2881AB990045854F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		4BADD3412881AED50045854F /* LossesDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesDetailsPresenter.swift; sourceTree = "<group>"; };
 		4BC05A202889E212004967E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,7 +115,6 @@
 				4B10CB512874655B00E45D0C /* EquipmentLosses.swift */,
 				4B10CB532874658E00E45D0C /* PersonnelLosses.swift */,
 				4B4227E92879C7820087A8CE /* ParseError.swift */,
-				4B8B47CD287EF1E4003BA1B6 /* RequestType.swift */,
 				4B873FB12886D5E800F52CBD /* Segment.swift */,
 			);
 			path = Model;
@@ -282,7 +279,6 @@
 				4BC2F30F287C6B410080555D /* Losses.swift in Sources */,
 				4B873FB02886D08900F52CBD /* LossesDetailsPresenterDelegate.swift in Sources */,
 				4BDF49292871F03600DAD15F /* MainViewController.swift in Sources */,
-				4B8B47CE287EF1E4003BA1B6 /* RequestType.swift in Sources */,
 				4BC2F30D287C69270080555D /* LossesPresenter.swift in Sources */,
 				4B873FAE2886D05B00F52CBD /* LossesPresenterDelegate.swift in Sources */,
 				4B873FB22886D5E800F52CBD /* Segment.swift in Sources */,

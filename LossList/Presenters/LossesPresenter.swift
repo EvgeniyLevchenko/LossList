@@ -19,7 +19,7 @@ final class LossesPresenter {
     public func getLossesInfo() {
         let networkManager = NetworkManager()
         
-        networkManager.fetchEquipmentLosses(completion: { result in
+        networkManager.fetchLosses(for: EquipmentLosses.self, completion: { result in
             switch result {
             case .success(let equipment):
                 DispatchQueue.main.async {
@@ -35,7 +35,7 @@ final class LossesPresenter {
             }
         })
         
-        networkManager.fetchPersonnelLosses(completion: { result in
+        networkManager.fetchLosses(for: PersonnelLosses.self, completion: { result in
             switch result {
             case .success(let personnel):
                 DispatchQueue.main.async {

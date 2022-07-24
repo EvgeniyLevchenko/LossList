@@ -8,6 +8,5 @@
 import Foundation
 
 protocol Networking {
-    func fetchEquipmentLosses(completion: @escaping(Result<[EquipmentLosses], ParseError>) -> Void) -> Void
-    func fetchPersonnelLosses(completion: @escaping(Result<[PersonnelLosses], ParseError>) -> Void) -> Void
+    func fetchLosses<T: Decodable>(for lossesType: T.Type, completion: @escaping(Result<[T], ParseError>) -> Void) -> Void
 }
