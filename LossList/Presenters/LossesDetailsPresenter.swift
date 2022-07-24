@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class LossesDetailsPresenter {
+final class LossesDetailsPresenter: LossesDetailsPresenting {
     public weak var delegate: DetailsPresenterDelegate?
     private var losses = Losses()
     private var lossesType: LossesType?
@@ -41,29 +41,36 @@ final class LossesDetailsPresenter {
         }
     }
     
-    public func configure(cell: DateTableViewCell, atRow row: Int, forSegment segment: Segment) {
-        switch segment {
-        case .monthly:
-            let monthStr = losses.getMonth(withNumber: row)
-            cell.configure(date: monthStr)
-        case .daily:
-            let dayStr = losses.getDay(withNumber: row)
-            cell.configure(date: dayStr)
-        }
-    }
-    
-    public func configure(cell: LossesTableViewCell, atRow row: Int, forSegment segment: Segment) {
-        switch segment {
-        case .monthly:
-            let previousLosses = losses.getLosses(forMonth: row - 1, forLossesType: lossesType)
-            let currentLosses = losses.getLosses(forMonth: row, forLossesType: lossesType)
-            let newLosses = currentLosses - previousLosses
-            cell.configure(lossesNumber: currentLosses, newLosses: newLosses)
-        case .daily:
-            let previousLosses = losses.getLosses(forDay: row - 1, forLossesType: lossesType)
-            let currentLosses = losses.getLosses(forDay: row, forLossesType: lossesType)
-            let newLosses = currentLosses - previousLosses
-            cell.configure(lossesNumber: currentLosses, newLosses: newLosses)
+    func configure(cell: Configurable, atRow row: Int, forSegment segment: Segment) {
+        switch type(of: cell) {
+        case is DateTableViewCell.Type:
+            let customCell = cell as! DateTableViewCell
+            
+            switch segment {
+            case .monthly:
+                let monthStr = losses.getMonth(withNumber: row)
+                customCell.configure(date: monthStr)
+            case .daily:
+                let dayStr = losses.getDay(withNumber: row)
+                customCell.configure(date: dayStr)
+            }
+        case is LossesTableViewCell.Type:
+            let customCell = cell as! LossesTableViewCell
+            
+            switch segment {
+            case .monthly:
+                let previousLosses = losses.getLosses(forMonth: row - 1, forLossesType: lossesType)
+                let currentLosses = losses.getLosses(forMonth: row, forLossesType: lossesType)
+                let newLosses = currentLosses - previousLosses
+                customCell.configure(lossesNumber: currentLosses, newLosses: newLosses)
+            case .daily:
+                let previousLosses = losses.getLosses(forDay: row - 1, forLossesType: lossesType)
+                let currentLosses = losses.getLosses(forDay: row, forLossesType: lossesType)
+                let newLosses = currentLosses - previousLosses
+                customCell.configure(lossesNumber: currentLosses, newLosses: newLosses)
+            }
+        default:
+            return
         }
     }
 }

@@ -12,6 +12,11 @@
 		4B10CB5628746A5E00E45D0C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B10CB5528746A5E00E45D0C /* NetworkManager.swift */; };
 		4B4227EA2879C7820087A8CE /* ParseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4227E92879C7820087A8CE /* ParseError.swift */; };
 		4B4227EE2879D2A60087A8CE /* LossesType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4227ED2879D2A60087A8CE /* LossesType.swift */; };
+		4B4D109A288D8F7D0055E1D3 /* LossesPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D1099288D8F7D0055E1D3 /* LossesPresenting.swift */; };
+		4B4D109C288D8FAC0055E1D3 /* LossesDetailsPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D109B288D8FAC0055E1D3 /* LossesDetailsPresenting.swift */; };
+		4B4D109E288D980F0055E1D3 /* LossesAccessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D109D288D980F0055E1D3 /* LossesAccessing.swift */; };
+		4B4D10A0288D981B0055E1D3 /* LossesTypeAccessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D109F288D981B0055E1D3 /* LossesTypeAccessing.swift */; };
+		4B4D10A2288D98260055E1D3 /* SegmentAccessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D10A1288D98260055E1D3 /* SegmentAccessing.swift */; };
 		4B5D4F91287B03A200E4147C /* LossesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4F8F287B03A200E4147C /* LossesCollectionViewCell.swift */; };
 		4B5D4F92287B03A200E4147C /* LossesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B5D4F90287B03A200E4147C /* LossesCollectionViewCell.xib */; };
 		4B5EFED228859E080026D5DC /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5EFED028859E080026D5DC /* DateTableViewCell.swift */; };
@@ -41,6 +46,11 @@
 		4B10CB5528746A5E00E45D0C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4B4227E92879C7820087A8CE /* ParseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseError.swift; sourceTree = "<group>"; };
 		4B4227ED2879D2A60087A8CE /* LossesType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesType.swift; sourceTree = "<group>"; };
+		4B4D1099288D8F7D0055E1D3 /* LossesPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesPresenting.swift; sourceTree = "<group>"; };
+		4B4D109B288D8FAC0055E1D3 /* LossesDetailsPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesDetailsPresenting.swift; sourceTree = "<group>"; };
+		4B4D109D288D980F0055E1D3 /* LossesAccessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesAccessing.swift; sourceTree = "<group>"; };
+		4B4D109F288D981B0055E1D3 /* LossesTypeAccessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesTypeAccessing.swift; sourceTree = "<group>"; };
+		4B4D10A1288D98260055E1D3 /* SegmentAccessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentAccessing.swift; sourceTree = "<group>"; };
 		4B5D4F8F287B03A200E4147C /* LossesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesCollectionViewCell.swift; sourceTree = "<group>"; };
 		4B5D4F90287B03A200E4147C /* LossesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LossesCollectionViewCell.xib; sourceTree = "<group>"; };
 		4B5EFED028859E080026D5DC /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
@@ -161,10 +171,15 @@
 		4B873FA82886CEED00F52CBD /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				4B873FA92886CFE200F52CBD /* Configurable.swift */,
+				4B4D109D288D980F0055E1D3 /* LossesAccessing.swift */,
+				4B4D109F288D981B0055E1D3 /* LossesTypeAccessing.swift */,
+				4B4D10A1288D98260055E1D3 /* SegmentAccessing.swift */,
 				4B873FAB2886D01C00F52CBD /* Networking.swift */,
+				4B873FA92886CFE200F52CBD /* Configurable.swift */,
 				4B873FAD2886D05B00F52CBD /* LossesPresenterDelegate.swift */,
+				4B4D1099288D8F7D0055E1D3 /* LossesPresenting.swift */,
 				4B873FAF2886D08900F52CBD /* LossesDetailsPresenterDelegate.swift */,
+				4B4D109B288D8FAC0055E1D3 /* LossesDetailsPresenting.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -192,8 +207,8 @@
 				4B10CB4B28745D7F00E45D0C /* Model */,
 				4B10CB4E28745F7B00E45D0C /* Views & View Controllers */,
 				4B10CB4A28745D6E00E45D0C /* Presenters */,
-				4B873FA82886CEED00F52CBD /* Protocols */,
 				4B10CB502874650900E45D0C /* Networking */,
+				4B873FA82886CEED00F52CBD /* Protocols */,
 				4B10CB4C28745DB500E45D0C /* Sources */,
 			);
 			path = LossList;
@@ -272,10 +287,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4D109E288D980F0055E1D3 /* LossesAccessing.swift in Sources */,
 				4B5EFED628859E400026D5DC /* LossesTableViewCell.swift in Sources */,
 				4B5EFED228859E080026D5DC /* DateTableViewCell.swift in Sources */,
 				4B873FAA2886CFE200F52CBD /* Configurable.swift in Sources */,
 				4B873FAC2886D01C00F52CBD /* Networking.swift in Sources */,
+				4B4D109A288D8F7D0055E1D3 /* LossesPresenting.swift in Sources */,
 				4BC2F30F287C6B410080555D /* Losses.swift in Sources */,
 				4B873FB02886D08900F52CBD /* LossesDetailsPresenterDelegate.swift in Sources */,
 				4BDF49292871F03600DAD15F /* MainViewController.swift in Sources */,
@@ -283,15 +300,18 @@
 				4B873FAE2886D05B00F52CBD /* LossesPresenterDelegate.swift in Sources */,
 				4B873FB22886D5E800F52CBD /* Segment.swift in Sources */,
 				4B4227EA2879C7820087A8CE /* ParseError.swift in Sources */,
+				4B4D109C288D8FAC0055E1D3 /* LossesDetailsPresenting.swift in Sources */,
 				4B10CB542874658E00E45D0C /* PersonnelLosses.swift in Sources */,
 				4B10CB522874655B00E45D0C /* EquipmentLosses.swift in Sources */,
 				4B10CB5628746A5E00E45D0C /* NetworkManager.swift in Sources */,
 				4B4227EE2879D2A60087A8CE /* LossesType.swift in Sources */,
 				4B5D4F91287B03A200E4147C /* LossesCollectionViewCell.swift in Sources */,
+				4B4D10A2288D98260055E1D3 /* SegmentAccessing.swift in Sources */,
 				4BADD3422881AED50045854F /* LossesDetailsPresenter.swift in Sources */,
 				4BDF49252871F03600DAD15F /* AppDelegate.swift in Sources */,
 				4BADD3402881AB990045854F /* DetailsViewController.swift in Sources */,
 				4BDF49272871F03600DAD15F /* SceneDelegate.swift in Sources */,
+				4B4D10A0288D981B0055E1D3 /* LossesTypeAccessing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

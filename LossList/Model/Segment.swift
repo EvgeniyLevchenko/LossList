@@ -11,7 +11,7 @@ enum Segment: Int {
     case monthly = 0
     case daily = 1
     
-    static func getSegment(for value: Int) -> Segment {
+    public static func getSegment(for value: Int) -> Segment {
         switch value {
         case 0:
             return .monthly

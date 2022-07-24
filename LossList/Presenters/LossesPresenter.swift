@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class LossesPresenter {
+final class LossesPresenter: LossesPresenting {
     public weak var delegate: PresenterDelegate?
     private var losses = Losses()
     private var dataIsAvailable = true
@@ -52,7 +52,7 @@ final class LossesPresenter {
         })
     }
     
-    private func presentErrorInfo(error: ParseError) {
+    func presentErrorInfo(error: ParseError) {
         let title = "Error"
         var message = ""
         switch error {
@@ -80,17 +80,15 @@ final class LossesPresenter {
         }
     }
     
-    public func configure(cell: LossesCollectionViewCell, atRow row: Int) {
+    public func configure(cell: Configurable, atRow row: Int) {
+        let customCell = cell as! LossesCollectionViewCell
         let lossesType = LossesType.getType(for: row)
         let lossesTypeStr = LossesType.getLossesTypeName(for: lossesType)
-        if let lossesTypeImage = UIImage(named: lossesTypeStr),
-           let lossesNumber = losses.getLosses(forLossesType: lossesType) {
-            cell.configure(lossesTypeImage: lossesTypeImage, lossesType: lossesTypeStr, lossesNumber: lossesNumber)
-        } else {
-            if let lossesTypeImage = UIImage(named: lossesTypeStr) {
-                cell.configure(lossesTypeImage: lossesTypeImage, lossesType: lossesTypeStr, lossesNumber: 0)
+        if let lossesTypeImage = UIImage(named: lossesTypeStr) {
+            if let lossesNumber = losses.getLosses(forLossesType: lossesType) {
+                customCell.configure(lossesTypeImage: lossesTypeImage, lossesType: lossesTypeStr, lossesNumber: lossesNumber)
             } else {
-                cell.configure(lossesTypeImage: UIImage(), lossesType: lossesTypeStr, lossesNumber: 0)
+                customCell.configure(lossesTypeImage: UIImage(), lossesType: lossesTypeStr, lossesNumber: 0)
             }
         }
     }

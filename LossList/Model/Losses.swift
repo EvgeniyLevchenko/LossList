@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct Losses {
-    var personnel: [PersonnelLosses] = []
-    var equipment: [EquipmentLosses] = []
-    
+struct Losses: LossesAccessing {
+    public var personnel: [PersonnelLosses] = []
+    public var equipment: [EquipmentLosses] = []
+
     public var daysNumber: Int {
         get {
             equipment.count
